@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <link rel="stylesheet" href="/styles/loginPage.css">     
+
+    <script src="/Scripts/loginScript.js" defer></script>    
+    <script src="/Scripts/cookies.js" defer></script>   
+    
+</head>
+<body>
+    <div class="hero">  
+        <div class="login-container">
+            <h2>Login</h2>
+            <form>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <p class="errorMessage" id="errorMessage"></p>
+    
+                <div class="form-group">
+                    <button type="button" id="loginBtn">Login</button>
+                </div> 
+
+                <div class="form-group buttons-row">
+                    <button type="button" id="registerBtn">Register</button>
+                    <button type="button" id="forgotPasswordBtn">Forgot Password</button>
+                </div> 
+    
+            </form>           
+        </div> 
+    </div>
+
+   
+</body>
+</html>
+
+
+<script>
+    function sendHeight() {
+        const height = document.documentElement.scrollHeight;
+        const message = {
+            type: 'scrollSize',
+            content: {
+                height: height,
+            }
+        };
+        window.parent.postMessage(message, '*');
+    }
+
+    window.addEventListener('load', sendHeight);
+    window.addEventListener('resize', sendHeight);
+</script>

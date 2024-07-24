@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.hero {
+    background: url('/Images/background.JPG') no-repeat center top;
+    position: relative;
+    background-size: 100%; 
+    height: 100vh;
+    width: 100%;
+    display: flex;    
+    justify-content: center;
+    align-items: flex-start;    
+    z-index: 900;     
+    
+}
+
+.main-content {
+    position: absolute; 
+    top: 200px;
+    width: 100%;
+    z-index: 950; 
+}
+
+.filter {        
+    margin-left: 10%;  
+    height: 300px;   
+    width: 800px;
+    z-index: 960; 
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.adsLeft{
+    display: grid;
+    margin-top: 50px;
+    margin-left: 3%;
+    margin-right: 2%;
+    gap: 100px;
+    width: 250px;
+    
+   
+}
+.adsRight{
+    display: grid;
+    margin-top: 50px;
+    margin-left: 2%;
+    margin-right: 3%;
+    gap: 100px;
+    width: 250px;   
+   
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    width: 70%;
+    z-index: 970;
+    margin-top: 50px;
+}
+
+.item {
+    background-color: rgba(239, 242, 241, 0.8);
+    padding: 20px;
+    height: 300px;
+    width: 180px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; 
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);    
+    border: 4px solid #e0e0e0;
+}
+
+.itemButton {
+    width: 100%;
+    padding: 5px; 
+    background-color: #343834;
+    width: 100px;
+    height: 40px;
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center; 
+    display: inline-block; 
+}
+
+.itemButton:hover {
+    background-color: #2a632d;
+}

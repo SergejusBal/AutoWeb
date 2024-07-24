@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+
+    <link rel="stylesheet" href="/styles/filter.css"> 
+     
+    
+    <script src="/Scripts/filter.js" defer></script> 
+    <script src="/Scripts/general.js" defer></script>     
+
+</head>
+<body>
+    <div class="filter-container">
+
+            <div class="form-group">
+            <div class="column">
+                <label for="make">Make:</label>
+                <select id="make" name="make">
+                    <option value="">-Select a brand-</option>                    
+                </select>
+            </div>
+            <div class="column">
+                <label for="model">Model:</label>
+                <select id="model" name="model">
+                    <option value="">-Select a model-</option>                    
+                </select>
+            </div>
+            <div class="column">
+                <label for="minprice">Min price:</label>
+                <input type="text" id="minprice"  placeholder="min price">
+            </div>
+            <div class="column">
+                <label for="maxprice">Max price:</label>
+                <input type="text" id="maxprice"  placeholder="max price">
+            </div>
+            <div class="column">
+                <label for="mileage">Max mileage:</label>
+                <input type="text" id="mileage"  placeholder="mileage">
+            </div>
+            <div class="column">
+                <label for="year">Year:</label>
+                <input type="text" id="year"  placeholder="year" value="1900">
+            </div>
+
+        </div>        
+
+        <div class="form-group" style="display: inline;">
+            <div>
+                <p class="errorMessage" id="errorMessage"></p>
+            </div> 
+            <div>              
+            <button type="button" onclick="applyFilter()">Apply</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

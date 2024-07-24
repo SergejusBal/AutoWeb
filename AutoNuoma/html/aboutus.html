@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    
+    
+    <link rel="stylesheet" href="/styles/aboutus.css">   
+    
+</head>
+<body>
+    <body>
+        <div class="hero">
+            <div class="about-us">
+                <h1>About Us</h1>
+                <p>Welcome to our premier car service company! We pride ourselves on delivering exceptional automotive services to our valued customers. With years of experience in the industry, we understand the importance of quality, reliability, and customer satisfaction.</p>
+                <p>Our team of highly skilled and certified mechanics is dedicated to providing top-notch maintenance and repair services for all makes and models of vehicles. From routine oil changes and brake repairs to complex engine diagnostics and transmission services, we've got you covered.</p>
+                <p>At our car service center, we use the latest technology and equipment to ensure that your vehicle receives the best care possible. Our commitment to excellence extends beyond just fixing cars; we aim to build lasting relationships with our clients through transparent communication, fair pricing, and unparalleled service.</p>
+                <p>We believe in going the extra mile to make sure your car is running smoothly and safely. Our customer-first approach means we take the time to listen to your concerns, explain the necessary repairs, and provide you with all the information you need to make informed decisions about your vehicle.</p>
+                <p>Thank you for choosing our car service company. We look forward to serving you and keeping your car in optimal condition for years to come. Drive with confidence, knowing that your vehicle is in the hands of professionals who care.</p>
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d15805.643461673444!2d25.26799444059754!3d54.63640943399023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTTCsDM4JzE1LjIiTiAyNcKwMTYnNDEuMiJF!5e0!3m2!1sen!2slt!4v1721141079757!5m2!1sen!2slt"
+                        width= 100%
+                        height="700px"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+            </div>
+        </div>   
+
+</body>
+</html>
+
+
+<script>
+    function sendHeight() {
+        const height = document.documentElement.scrollHeight;
+        const message = {
+            type: 'scrollSize',
+            content: {
+                height:height,
+                }
+
+        }
+        window.parent.postMessage( message , '*');
+    }
+
+    window.addEventListener('load', sendHeight);
+    window.addEventListener('resize', sendHeight);
+</script>

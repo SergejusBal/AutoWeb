@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+
+    <link rel="stylesheet" href="/styles/userProfile.css"> 
+
+    <script src="/Scripts/userProfile.js" defer></script>   
+    <script src="/Scripts/cookies.js" defer></script>   
+
+</head>
+<body>
+
+    <div class="hero">  
+        <div class="user-container">
+            <h2>User Profile</h2>
+            <form>
+
+                <div class="form-group">
+                    <label for="name">Enter new name</label>
+                    <input type="text" id="name" name="name" required placeholder="enter new name">
+                </div>                   
+                <div class="form-group">
+                    <label for="password">Enter new password</label>
+                    <input type="password" id="password1" name="password1" required placeholder="enter new password">
+                </div>
+                <div class="form-group">
+                    <label for="password_confirm">Confirm new password</label>
+                    <input type="password" id="password2" name="password2" required placeholder="enter new password">
+                </div>
+
+                <p class="errorMessage" id="errorMessage"></p>   
+    
+                <div class="form-group">
+                    <button type="button" id="submitBtn">Submit</button>
+                </div>   
+                
+                
+            </form>           
+        </div> 
+
+    
+</body>
+</html>
+
+<script>
+    function sendHeight() {
+        const height = document.documentElement.scrollHeight;
+        const message = {
+            type: "scrollSize",
+            content: {
+                height:height,
+                }
+
+        }
+        window.parent.postMessage( message , '*');
+    }
+
+    window.addEventListener('load', sendHeight);
+    window.addEventListener('resize', sendHeight);
+</script>
+

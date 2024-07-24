@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content</title>
+    
+    <link rel="stylesheet" href="/styles/homePage.css">    
+
+    <script src="/Scripts/test.js" defer></script>  
+    <script src="/Scripts/homePage.js" defer></script>  
+    <script src="/Scripts/general.js" defer></script>   
+
+    <link rel="icon" href="/Images/logo.png" type="image/x-icon">    
+
+</head>
+<body>
+    <div class="hero">  
+        <div class="main-content">
+            <div class="filter">               
+                <iframe
+                    id="filterIframe"
+                    src="/html/filter.html"
+                    style="border:0; width: 1200px; height: 300px;"
+                    allowfullscreen=""
+                    loading="lazy" >
+                </iframe>
+
+            </div>
+            
+            <div class="content">
+                <div class="adsLeft">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14468.994107933546!2d25.27321411779737!3d54.687155808079074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd941128c65f61%3A0x400d25f8c213360!2sVilnius%2C%20Lithuania!5e0!3m2!1sen!2sus!4v1597615397438!5m2!1sen!2sus"
+                        width="250"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14468.994107933546!2d25.27321411779737!3d54.687155808079074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd941128c65f61%3A0x400d25f8c213360!2sVilnius%2C%20Lithuania!5e0!3m2!1sen!2sus!4v1597615397438!5m2!1sen!2sus"
+                        width="250"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+                <div class="grid" id="gridContainer">                    
+                    
+                    
+                </div>
+                <div class="adsRight">
+                    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14468.994107933546!2d25.27321411779737!3d54.687155808079074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd941128c65f61%3A0x400d25f8c213360!2sVilnius%2C%20Lithuania!5e0!3m2!1sen!2sus!4v1597615397438!5m2!1sen!2sus"
+                    width="250"
+                    height="300"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                    </iframe>
+
+                    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14468.994107933546!2d25.27321411779737!3d54.687155808079074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd941128c65f61%3A0x400d25f8c213360!2sVilnius%2C%20Lithuania!5e0!3m2!1sen!2sus!4v1597615397438!5m2!1sen!2sus"
+                    width="250"
+                    height="300"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                    </iframe>
+                        
+                </div>
+            </div>    
+        </div>
+    </div>
+
+
+
+</body>
+</html>
+
+
+<script>
+    function sendHeight() {
+        const height = document.documentElement.scrollHeight;
+        const message = {
+            type: "scrollSize",
+            content: {
+                height:height,
+                }
+
+        }
+        window.parent.postMessage( message , '*');
+    }
+
+    window.addEventListener('load', sendHeight);
+    window.addEventListener('resize', sendHeight);
+</script>

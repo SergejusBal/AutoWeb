@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Page</title>
+
+    <link rel="stylesheet" href="/styles/carPage.css"> 
+    
+    <script src="/Scripts/carPage.js" defer></script>
+    <script src="/Scripts/cookies.js" defer></script>
+    <script src="/Scripts/general.js" defer></script>
+
+       
+</head>
+<body>
+    <div class="hero">
+        <div class="preview-container">
+            <h1 id="title">Your Title</h1>
+            <div class="photo-preview">
+                <img id="photo" alt="car photo"> 
+            </div>
+            <div class="parameters">
+                <div class="parameter-item">
+                    <div class="parameter-name">Brand:</div>
+                    <div class="parameter-value" id="make"></div>
+                </div>
+                <div class="parameter-item">
+                    <div class="parameter-name">Model:</div>
+                    <div class="parameter-value" id="model"></div>
+                </div>
+                <div class="parameter-item">
+                    <div class="parameter-name">Year:</div>
+                    <div class="parameter-value" id="year"></div>
+                </div>
+                <div class="parameter-item">
+                    <div class="parameter-name">Price (€):</div>
+                    <div class="parameter-value" id="price"></div>
+                </div>
+                <div class="parameter-item">
+                    <div class="parameter-name">Mileage (km):</div>
+                    <div class="parameter-value" id="mileage"></div>
+                </div>
+            </div>
+            <div class="description">
+                <p class="description-label">Description:</p>
+                <p id="description"></p>
+            </div>
+
+            <p class="errorMessage" id="errorMessage"></p>
+
+            <div>  
+            <button class="editBtm" id="editBtn">Edit</button>
+            <button class="editBtm" id="deleteBtn">Delete</button>                
+        </div>        
+    </div>
+
+   
+</body>
+</html>
+
+
+<script>
+    function sendHeight() {
+        const height = document.documentElement.scrollHeight;
+        const message = {
+            type: 'scrollSize',
+            content: {
+                height:height,
+                }
+                
+        }
+        console.log("send","send");
+        window.parent.postMessage( message , '*');
+    }
+
+    window.addEventListener('load', sendHeight);
+    window.addEventListener('resize', sendHeight);
+</script>

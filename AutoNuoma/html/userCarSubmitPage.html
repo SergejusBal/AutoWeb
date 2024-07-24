@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>   
+
+             
+    <link rel="stylesheet" href="/styles/userCarSubmitPage.css"> 
+
+    <script src="/Scripts/userCarSubmitPage.js" defer></script>
+    <script src="/Scripts/general.js" defer></script>
+    <script src="/Scripts/cookies.js" defer></script>
+    
+    
+   
+    
+</head>
+<body>
+    <div class="hero">
+    
+        <div class="Content">
+            <div class="container">
+                <h1>Add a Car</h1>
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <textarea id="title"></textarea>
+                </div>    
+                <div class="form-group">
+                    <label for="make">Make:</label>
+                    <textarea id="make"></textarea>
+                </div>    
+                <div class="form-group">
+                    <label for="model">Model:</label>
+                    <textarea id="model"></textarea>
+                </div> 
+                <div class="form-group">
+                    <label for="price">Price (€):</label>
+                    <textarea id="price"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="mileage">Mileage (km):</label>
+                    <textarea id="mileage"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea class="bigTextArea" id="description"></textarea>
+                </div> 
+                <div class="yearFileBox">
+                    <div class="form-group" style="margin: 20px;">
+                        <label for="year">Year:</label>
+                        <select id="year">
+                            <option value="">Select Year</option>
+                            <script>
+                                const currentYear = new Date().getFullYear();
+                                for (let year = currentYear; year >= 1990; year--) {
+                                    document.write('<option value="' + year + '">' + year + '</option>');
+                                }
+                            </script>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin: 20px;">
+                        <label for="photo">Photo:</label>
+                        <input type="file" id="photo" accept="image/*">
+                    </div>         
+                </div>
+
+                <p class="errorMessage" id="errorMessage"></p>
+
+                <div class="button-group">
+                    <button id="clickButtonSend" onclick="sentToDataBase()">Send</button>
+                    <button id="clickButtonPreview" onclick="setPreview()">Preview</button>
+                </div> 
+            </div> 
+
+            <div class="preview-container">
+                <h1 id="titlePreview">Your Title</h1>
+                <div class="photo-preview">
+                    <img id="photoPreview" src="/Images/original_logo.webp" alt="car photo"> 
+                </div>
+                <div class="parameters">
+                    <div class="parameter-item">
+                        <div class="parameter-name">Make:</div>
+                        <div class="parameter-value" id="makePreview">empty</div>
+                    </div>
+                    <div class="parameter-item">
+                        <div class="parameter-name">Model:</div>
+                        <div class="parameter-value" id="modelPreview">empty</div>
+                    </div>
+                    <div class="parameter-item">
+                        <div class="parameter-name">Year:</div>
+                        <div class="parameter-value" id="yearPreview">empty</div>
+                    </div>
+                    <div class="parameter-item">
+                        <div class="parameter-name">Price (€):</div>
+                        <div class="parameter-value" id="pricePreview">empty</div>
+                    </div>
+                    <div class="parameter-item">
+                        <div class="parameter-name">Mileage (km):</div>
+                        <div class="parameter-value" id="mileagePreview">empty</div>
+                    </div>
+                </div>
+                <div class="description">
+                    <p class="description-label">Description:</p>
+                    <p id="descriptionPreview">empty</p>
+                </div>
+            </div>
+        </div>        
+    </div> 
+   
+</body>
+</html>
+
+
+<script>
+    function sendHeight() {
+        const height = document.documentElement.scrollHeight;
+        const message = {
+            type: "scrollSize",
+            content: {
+                height:height,
+                }
+
+        }
+        window.parent.postMessage( message , '*');
+    }
+
+    window.addEventListener('load', sendHeight);
+    window.addEventListener('resize', sendHeight);
+</script>
+
